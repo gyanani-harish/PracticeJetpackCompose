@@ -1,4 +1,4 @@
-package gyanani.harish.practicejetpackcompose.ui
+package gyanani.harish.practicejetpackcompose.ui.lazycolumn
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding

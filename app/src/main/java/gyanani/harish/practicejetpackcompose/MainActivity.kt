@@ -20,7 +20,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import gyanani.harish.practicejetpackcompose.ui.HelloWorldScreen
-import gyanani.harish.practicejetpackcompose.ui.ListScreen
+import gyanani.harish.practicejetpackcompose.ui.lazycolumn.ListItemWithAdvancedLogs
+import gyanani.harish.practicejetpackcompose.ui.lazycolumn.ListScreen
+import gyanani.harish.practicejetpackcompose.ui.lazycolumn.ListScreenWithLogs
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +51,7 @@ fun NavigationScreen() {
         composable("main") { MainScreen(navController) } // Home screen with buttons
         composable("hello") { HelloWorldScreen() }       // Simple "Hello World"
         composable("list") { ListScreen() }             // RecyclerView equivalent
+        composable("listWithLogs") { ListScreenWithLogs() }             // RecyclerView equivalent
     }
 }
 
@@ -71,6 +74,13 @@ fun MainScreen(navController: NavController) {
             modifier = Modifier.padding(16.dp)
         ) {
             Text("Open RecyclerView")
+        }
+
+        Button(
+            onClick = { navController.navigate("listWithLogs") },
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text("Open RecyclerView with Logs")
         }
     }
 }
