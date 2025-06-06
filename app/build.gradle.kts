@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.androidx.foundation.layout)
     implementation(libs.androidx.material3)
     implementation(libs.accompanist.permissions)
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
