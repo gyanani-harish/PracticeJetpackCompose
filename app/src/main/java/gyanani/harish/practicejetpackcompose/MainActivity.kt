@@ -23,6 +23,7 @@ import gyanani.harish.practicejetpackcompose.ui.HelloWorldScreen
 import gyanani.harish.practicejetpackcompose.ui.lazycolumn.ListItemWithAdvancedLogs
 import gyanani.harish.practicejetpackcompose.ui.lazycolumn.ListScreen
 import gyanani.harish.practicejetpackcompose.ui.lazycolumn.ListScreenWithLogs
+import gyanani.harish.practicejetpackcompose.ui.lazycolumn.expand_collapse.ExpandableListScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +53,7 @@ fun NavigationScreen() {
         composable("hello") { HelloWorldScreen() }       // Simple "Hello World"
         composable("list") { ListScreen() }             // RecyclerView equivalent
         composable("listWithLogs") { ListScreenWithLogs() }             // RecyclerView equivalent
+        composable("listWithExpandCollapse") { ExpandableListScreen() }
     }
 }
 
@@ -81,6 +83,13 @@ fun MainScreen(navController: NavController) {
             modifier = Modifier.padding(16.dp)
         ) {
             Text("Open RecyclerView with Logs")
+        }
+
+        Button(
+            onClick = { navController.navigate("listWithExpandCollapse") },
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text("Open RecyclerView with Expand/Collapse")
         }
     }
 }
